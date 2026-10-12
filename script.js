@@ -1,0 +1,71 @@
+// Isi ph/ wreck dengan URL gambar asli kalau mau pakai foto (jalan kalau file dibuka lokal)
+const T=[
+{n:"M1A2 Abrams",c:"Amerika Serikat",col:"#6b4a50",g:44,tu:60,photo:"https://wallpapercave.com/wp/wp3632539.jpg",wreck:"", 
+h:"M1 Abrams dikembangkan General Dynamics Land Systems untuk menggantikan M60 dan mulai dinas di US Army tahun 1980. Varian M1A2 muncul awal 1990-an dengan komputer digital, sistem pengamatan komandan independen (CITV) dan peningkatan zirah. Abrams dipakai luas di Perang Teluk 1991, Irak, dan diekspor ke Australia, Arab Saudi, Mesir, Polandia dan lainnya.",
+p:["Zirah komposit generasi lanjut, sebagian varian pakai lapisan uranium terdeplesi","Sistem kendali tembak dan thermal sight sangat baik","Turbin gas memberi akselerasi cepat dan senyap","Amunisi disimpan di kompartemen blow-off panel, lebih aman bagi kru"],
+k:["Konsumsi bahan bakar sangat boros","Bobot berat, perawatan dan logistik mahal","Loader manual, tembakan lebih lambat dari tank autoloader","Mesin turbin sensitif terhadap debu dan filter"],
+s:[["Negara asal","Amerika Serikat"],["Kru","4 orang"],["Bobot","sekitar 63 ton"],["Meriam utama","120 mm M256 smoothbore"],["Mesin","Honeywell AGT1500, turbin gas 1.500 hp"],["Kecepatan maks (jalan)","sekitar 67 km/jam"],["Dinas sejak","1980 (M1), 1992 (M1A2)"]]},
+{n:"Leopard 2A6",c:"Jerman",col:"#5f6a55",g:58,tu:62,photo:"",wreck:"",
+h:"Leopard 2 dirancang di Jerman Barat oleh Krauss-Maffei dan masuk dinas tahun 1979. Varian 2A6 (sekitar 2001) mendapat meriam Rheinmetall L/55 yang lebih panjang untuk kecepatan peluru lebih tinggi plus perlindungan ranjau yang diperkuat. Leopard 2 jadi salah satu tank paling banyak diekspor di Eropa dan dipakai Belanda, Kanada, Spanyol, Swedia (Strv 122), Polandia dan lainnya.",
+p:["Meriam L/55 sangat akurat dan bertenaga","Mesin diesel lebih irit dan andal dibanding turbin","Mobilitas bagus untuk tank seberat itu","Ekosistem suku cadang dan operator luas di NATO"],
+k:["Bobot berat, kurang cocok untuk jembatan ringan","Harga dan biaya perawatan tinggi","Loader manual","Beberapa varian lama punya area lemah di bagian depan turret"],
+s:[["Negara asal","Jerman"],["Kru","4 orang"],["Bobot","sekitar 62 ton"],["Meriam utama","120 mm Rheinmetall L/55 smoothbore"],["Mesin","MTU MB 873 diesel V12, 1.500 hp"],["Kecepatan maks (jalan)","sekitar 68 km/jam"],["Dinas sejak","1979 (Leopard 2), 2001 (2A6)"]]},
+{n:"T-90A",c:"Rusia",col:"#6a6f4c",g:50,tu:52,photo:"",wreck:"",
+h:"T-90 dikembangkan di Rusia pada awal 1990-an sebagai evolusi T-72B, memakai banyak fitur T-80U. Varian T-90A (dinas sekitar 2006) memakai turret las dan mesin V-92S2. Ada ERA Kontakt-5 dan sistem Shtora untuk mengacaukan rudal berpemandu laser. India adalah operator ekspor terbesar.",
+p:["Autoloader memberi laju tembak cepat dan kru hanya 3","Siluet rendah, sulit dibidik","Kontakt-5 ERA melindungi dari HEAT dan APFSDS tertentu","Bisa menembakkan rudal lewat laras (9M119)"],
+k:["Amunisi autoloader di dalam hull rawan 'jack-in-the-box' jika tertembus","Elevasi/depresi meriam terbatas","Optik malam dan situational awareness kalah dari tank Barat","Ruang kru sempit"],
+s:[["Negara asal","Rusia"],["Kru","3 orang"],["Bobot","sekitar 46,5 ton"],["Meriam utama","125 mm 2A46M-5 smoothbore"],["Mesin","V-92S2 diesel, 1.000 hp"],["Kecepatan maks (jalan)","sekitar 60 km/jam"],["Dinas sejak","sekitar 2006"]]},
+{n:"VT-4",c:"Tiongkok",col:"#7a7a52",g:48,tu:54,photo:"",wreck:"",
+h:"VT-4 (juga dikenal MBT-3000) adalah tank tempur utama ekspor buatan Norinco, dikembangkan dari Type 99 dengan fokus pasar ekspor. Tank ini dipakai Thailand, Nigeria dan versi turunannya (Haider) di Pakistan. Tampilannya modern dengan komposit dan ERA, sistem kendali tembak digital dan thermal imager.",
+p:["Mesin 1.300 hp, mobilitas bagus untuk bobotnya","Autoloader dan kru 3 orang","Sistem kendali tembak dan sensor modern","Harga lebih terjangkau dibanding tank Barat"],
+k:["Rekam jejak tempur terbatas","Data zirah dan performa riil kurang transparan","Dukungan jangka panjang bergantung pada pemasok","Masih memakai layout autoloader dengan risiko amunisi"],
+s:[["Negara asal","Tiongkok"],["Kru","3 orang"],["Bobot","sekitar 52 ton"],["Meriam utama","125 mm smoothbore"],["Mesin","Diesel sekitar 1.300 hp"],["Kecepatan maks (jalan)","sekitar 70 km/jam"],["Dinas sejak","sekitar 2014 (ekspor)"]]},
+{n:"Challenger 2",c:"Inggris",col:"#6b6f5a",g:42,tu:64,photo:"",wreck:"",
+h:"Challenger 2 dibuat oleh Vickers Defence Systems dan masuk dinas British Army tahun 1998 sebagai pengganti Challenger 1. Tank ini memakai zirah Chobham/Dorchester generasi lanjut dan meriam rifled 120 mm L30A1, jarang di tank modern. Dipakai di Irak 2003 dan Oman, serta dikirim ke Ukraina pada 2023.",
+p:["Zirah Dorchester sangat tangguh, reputasi ketahanan tinggi","Meriam rifled akurat dan cocok untuk amunisi HESH","Stabilisasi dan sistem kendali tembak bagus","Awak terlindungi dengan baik"],
+k:["Mesin Perkins CV12 kurang bertenaga dan kurang andal","Meriam rifled tidak bisa pakai amunisi smoothbore standar NATO","Mobilitas lamban dan bobot berat","Produksi sudah dihentikan, suku cadang terbatas"],
+s:[["Negara asal","Inggris"],["Kru","4 orang"],["Bobot","sekitar 62,5 ton"],["Meriam utama","120 mm L30A1 rifled"],["Mesin","Perkins CV12 diesel, 1.200 hp"],["Kecepatan maks (jalan)","sekitar 59 km/jam"],["Dinas sejak","1998"]]},
+{n:"T-55",c:"Rusia (Uni Soviet)",col:"#66684a",g:46,tu:44,photo:"",wreck:"",
+h:"T-55 adalah penerus T-54 yang masuk produksi tahun 1958. Dirancang sederhana, murah dan mudah dirawat, jadi salah satu tank paling banyak diproduksi dalam sejarah, puluhan ribu unit di banyak negara. Dipakai di Perang Vietnam, Timur Tengah, Afrika hingga konflik modern dan sampai sekarang masih dimodifikasi.",
+p:["Murah, sederhana, mudah dirawat","Siluet sangat rendah","Mudah dimodifikasi dan di-upgrade","Tersedia dalam jumlah sangat besar"],
+k:["Zirah usang terhadap senjata modern","Optik dan kendali tembak primitif","Depresi meriam sangat terbatas","Amunisi tidak terlindungi, mudah terbakar"],
+s:[["Negara asal","Uni Soviet"],["Kru","4 orang"],["Bobot","sekitar 36 ton"],["Meriam utama","100 mm D-10T rifled"],["Mesin","V-55 diesel, 580 hp"],["Kecepatan maks (jalan)","sekitar 50 km/jam"],["Dinas sejak","1958"]]}
+];
+function svg(t,dead){
+const w=800,hh=330,base=dead?"#2b2622":t.col,dk=dead?"#171412":"#3c3d2a",gx=dead?330:455;
+let s=`<svg viewBox="0 0 ${w} ${hh}" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sky${dead?1:0}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${dead?"#2a1f1a":"#44566a"}"/><stop offset="1" stop-color="${dead?"#4a3526":"#a9b8c4"}"/></linearGradient></defs>
+<rect width="${w}" height="${hh}" fill="url(#sky${dead?1:0})"/><rect y="255" width="${w}" height="75" fill="${dead?"#2a231d":"#6d6248"}"/>`;
+if(dead)s+=`<ellipse cx="250" cy="120" rx="130" ry="70" fill="#111" opacity=".5"/><ellipse cx="380" cy="60" rx="150" ry="55" fill="#111" opacity=".4"/><ellipse cx="170" cy="40" rx="110" ry="40" fill="#111" opacity=".35"/>`;
+s+=`<g><rect x="150" y="215" width="500" height="48" rx="22" fill="${dk}"/>`;
+for(let i=0;i<9;i++)s+=`<circle cx="${185+i*55}" cy="240" r="18" fill="#1d1e18" stroke="#555" stroke-width="3"/>`;
+s+=`<path d="M170 215 L215 165 L610 165 L650 215Z" fill="${base}"/>`;
+if(dead){s+=`<path d="M300 165 L330 150 L380 168Z" fill="#111"/><path d="M420 165 l30 -14 l40 14z" fill="#0b0b0b"/><rect x="190" y="205" width="30" height="8" fill="#5a2d12"/>`}
+else{s+=`<path d="M300 165 L330 110 L${300+t.tu*3} 110 L${340+t.tu*3} 165Z" fill="${base}" stroke="${dk}" stroke-width="3"/><rect x="${gx-100}" y="128" width="${gx-70<120?120:260}" height="12" fill="${dk}"/><rect x="${gx+t.g}" y="125" width="${70+t.g*2}" height="9" fill="${dk}"/><circle cx="395" cy="125" r="10" fill="${dk}"/>`}
+s+=`</g>`;
+if(dead){
+// turret terlempar dan miring
+s+=`<g transform="translate(560 235) rotate(24)"><path d="M0 40 L30 0 L${t.tu*2} 0 L${40+t.tu*2} 40Z" fill="#1d1a17" stroke="#080808" stroke-width="3"/><rect x="${t.tu*2}" y="12" width="${60+t.g}" height="8" fill="#0d0d0d" transform="rotate(8)"/></g>`;
+s+=`<path d="M250 165 q-18 -50 6 -78 q4 36 28 20 q-4 28 12 58Z" fill="#e8591a"/><path d="M262 165 q-8 -30 6 -48 q6 22 18 14 q-2 18 6 34Z" fill="#f7b12d"/><path d="M440 165 q-14 -40 8 -62 q4 30 24 16 q-4 20 10 46Z" fill="#e8591a"/><path d="M448 165 q-6 -22 6 -36 q4 14 14 8 q-2 12 4 28Z" fill="#f7b12d"/>`;
+s+=`<g stroke="#000" stroke-width="2" opacity=".5"><line x1="205" y1="200" x2="240" y2="215"/><line x1="560" y1="190" x2="520" y2="210"/></g>`;
+}
+s+="</svg>";return s}
+function show(i){
+const t=T[i];
+document.querySelectorAll("#nav button").forEach((b,j)=>b.classList.toggle("on",i==j));
+const m=document.getElementById("main");
+m.innerHTML=`<h2>${t.n}</h2><div class="sub">${t.c} &bull; Main Battle Tank</div>
+<div class="tabs">${["Foto","Sejarah","Kelebihan &amp; Kekurangan","Spesifikasi","Kondisi Hancur"].map((x,j)=>`<button data-j="${j}">${x}</button>`).join("")}</div><div id="pane"></div>`;
+const img=(u,d,c)=>`<div class="img">${u?`<img src="${u}" alt="${t.n}" onerror="this.outerHTML=window.fb(${i},${d})">`:svg(t,d)}</div><div class="cap">${c}</div>`;
+window.fb=(k,d)=>svg(T[k],d);
+const tabs=[
+()=>img(t.photo,false,"Ilustrasi "+t.n+". https://wallpapercave.com/wp/wp3632539.jpg."),
+()=>`<p>${t.h}</p>`,
+()=>`<div class="cols"><div class="box pro"><h3>Kelebihan</h3><ul>${t.p.map(x=>`<li>${x}</li>`).join("")}</ul></div><div class="box con"><h3>Kekurangan</h3><ul>${t.k.map(x=>`<li>${x}</li>`).join("")}</ul></div></div>`,
+()=>`<table>${t.s.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join("")}</table><div class="note">Angka bersifat perkiraan dan bisa beda antar varian. Ini bukan data battle rating game.</div>`,
+()=>img(t.wreck,true,"Ilustrasi "+t.n+" setelah hancur: turret terlempar, terbakar. Isi field wreck dengan foto bangkai asli kalau mau.")
+];
+const go=j=>{document.getElementById("pane").innerHTML=tabs[j]();m.querySelectorAll(".tabs button").forEach((b,k)=>b.classList.toggle("on",k==j))};
+m.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>go(+b.dataset.j));
+go(0)}
+document.getElementById("nav").innerHTML=T.map((t,i)=>`<button onclick="show(${i})"><small>${t.c}</small>${t.n}</button>`).join("");
+show(0);
